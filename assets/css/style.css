@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+	font-family: 'Luxia Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Luxia Regular'), url('../fonts/primary/LuxiaRegular.woff') format('woff');
+}
+@font-face {
+	font-family: 'Luxia Display';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Luxia Display'), url('../fonts/primary/LuxiaDisplay.woff') format('woff');
+}
+html{
+	scroll-behavior: smooth;
+}
+:root{
+	--primary: rgba(255, 168, 1,1.0);
+	--secondary: #f0932b;
+	--dark: #000000;
+	--light: #fff;
+	--alt: rgba(255, 192, 72, 0.2);
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+section, header, footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+}
+.inner-wrapper-header{
+	width: 100%;
+	max-width: 1400px;
+	padding: 1.4rem 2.4rem;
+}
+.inner-wrapper{
+	width: 100%;
+	max-width: 1400px;
+	padding: 3.5rem 2.4rem;
+}
+.btn{
+	transition: 0.6s;
+	padding: 1rem 2.4rem;
+	position: relative;
+	display: block;
+}
+.btn-dark{
+	background: var(--dark);
+	color: var(--light);
+}
+.btn-primary{
+	color: var(--light);
+}
+.btn-primary *{
+	position: relative;
+	z-index: 3;
+}
+.btn-primary:after{
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--primary);
+	z-index: 1;
+	transition: 0.6s;
+	transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.btn-primary:before{
+	content: "";
+	width: 0%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--dark);
+	z-index: 2;
+	transition: 0.6s;
+	transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.btn-primary:hover:before{
+	width: 100%;
+	top: 0;
+	left: auto;
+	right: 0;
+}
+.color-primary{
+	color: var(--primary);
+}
+.bg-primary{
+	background: var(--primary);
+}
+h1,h2,h3,h4,h5,h6,.font-play{
+	font-family: 'Luxia Display';
+}
+.relative{
+	position: relative;
+}
+.z-2{
+	z-index: 2;
+}
+.z-5{
+	z-index: 5;
+}
+.z-10{
+	z-index: 10;
+}
+a.link{
+	transition: 0.6s;
+}
+a.link:hover{
+	color: var(--primary);
+}
+
+/* Header */
+#header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+.dropdown{
+	min-width: 180px;
+	position: absolute;
+	top: 1.5rem;
+	z-index: -10;
+	opacity: 0;
+	pointer-events: none;
+	padding-top: 1rem;
+}
+.dropdown-menu:hover .dropdown{
+	z-index: 10;
+	opacity: 1;
+	pointer-events: auto;
+}
+.dropdown li, .dropdown li a{
+	transition: 0.2s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.dropdown li:hover{
+	background: var(--primary);
+}
+.dropdown li:hover a{
+	transform: translateX(4px);
+	color: var(--light);
+}
+/* Mobile Menu */
+/* Hero */
+.left-hero-container{
+	/*min-width: 120%;*/
+}
+/* Collection opt */
+.collaction-box-content{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+.collection-box span ion-icon{
+	margin-top: 2px;
+}
+.collection-box img, .collection-box span ion-icon[name="chevron-forward-outline"]{
+	transition: 0.6s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.collection-box:hover img{
+	transform: scale(1.2);
+}
+.collection-box:hover span ion-icon{
+	transform: translateX(10px);
+}
+#collections .swiper-horizontal>.swiper-pagination-bullets,
+#collections .swiper-pagination-bullets.swiper-pagination-horizontal,
+#collections .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom: -30px;
+}
+.swiper-wrapper{
+	transition: 0.6s !important;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) !important;
+}
+/* Product all */
+.product-img-box{
+	position: relative;
+}
+.product-img-box img{
+	transition: 0.6s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.product-img-box img:nth-child(2){
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transform: translateX(5px);
+}
+.list-product:hover .product-img-box img:nth-child(1){
+	opacity: 0;
+	transform: translateX(-5px);
+}
+.list-product:hover .product-img-box img:nth-child(2){
+	opacity: 1;
+	transform: translateX(0px);
+}
+/* Best selling */
+#best-selling{
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+	url('../../images/furnitures.jpg') center center no-repeat;
+	background-size: cover;	
+}
+/* Reviews */
+.review-container .review-box:nth-child(1){
+	position: relative;
+	left: 50px;
+}
+.review-container .review-box:nth-child(2){
+	position: relative;
+	left: 25px;
+}
