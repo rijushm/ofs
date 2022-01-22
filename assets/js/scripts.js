@@ -6,7 +6,7 @@ $(window).on('load', function(){
 	var winheight = $(window).height();
 	$(".dropdown-mobile").height(0);
 	$(".menu").css('top', headerheight);
-	$(".menu").height(winheight-headerheight);
+	$(".menu").height(winheight);
 	$("#hamburger").click(function(){
 		$(this).toggleClass('open');
 		$('.menu').toggleClass('active');
