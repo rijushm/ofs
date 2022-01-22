@@ -35,4 +35,8 @@ $(window).on('load', function(){
 			$(".dropdown-mobile").height(0);
 		}
 	})
+	$('.list-product-img').each(function(index){
+		$(this).attr('height', $(this).width());
+		$(this).height($(this).width());
+	})
 })

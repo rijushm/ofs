@@ -82,7 +82,19 @@
 .mobile-menu .menu ul{
 	transform: translateY(-30px);
 }
+@media only screen and (max-width: 769px){
+	#swipe-slider{
+		bottom: -1rem;
+		right: 2rem;
+		width: 20%;
+	}
+}
 @media only screen and (max-width: 600px){
+	#swipe-slider{
+		bottom: 0rem;
+		right: 2rem;
+		width: 20%;
+	}
 	.inner-wrapper-header{
 		padding: 1rem 2rem;
 	}
